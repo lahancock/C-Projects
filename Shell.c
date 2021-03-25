@@ -1,8 +1,5 @@
 //Lauren Hancock
-//Project 2 - Shell
-
-//Feedback:
-The program has problems after you use redirect for the first time. This is because you never reset the redirect variable to -1. It is initialized outside of your overall while loop, but never reset for each iteration of the loop. This means that after the first use of redirect, the commands are consistently trying to redirect the output but getting strange arguments to do so and stuff basically stops working.
+//Shell Project 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,10 +13,10 @@ The program has problems after you use redirect for the first time. This is beca
 int main(){
   char line[1024];// get command line
   char* args[100];
-  int redirect = -1;
   
   //Run command loop
   while (1){
+    int redirect = -1;
     printf("~~~~~~~~> ");//print prompt
     fgets(line, 1024, stdin);//Get input
     
